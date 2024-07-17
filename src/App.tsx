@@ -1,8 +1,9 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import "./App.css";
 import { useAccount, useReadContract } from "wagmi";
-import { abi } from "./assets/abis/fortuneCookieAbi";
+import { abi } from "./assets/abis/abi";
 import { CONTRACT_ADDRESS } from "./assets/constants";
+import { MintNFT } from "./MintNFT";
 
 function App() {
   const { address, isConnected } = useAccount();
@@ -18,15 +19,7 @@ function App() {
       <h1 className="text-4xl font-bold text-black">NFT Artist</h1>
       <div>
         {isConnected ? (
-          <p>
-            <span className="text-black">balance:</span>
-            {""}
-            {isLoading ? (
-              <span className="text-black font-bold">Loading...</span>
-            ) : (
-              data?.toString()
-            )}
-          </p>
+          <p></p>
         ) : (
           <div>Please connect your wallet to mint your gift</div>
         )}
